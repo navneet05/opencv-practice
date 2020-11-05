@@ -25,12 +25,17 @@ def imagepr(img):
 #%% Reading the image using imread() function 
 image = cv2.imread('road.jpg') #1(default) for normal image, 0 for grayscale, -1 for unchanged
 imagepr(image)
-#%% image shape,resize,slicing
+#%% image shape,size,datatype,resize,slicing
 
 # Extracting the height and width of an image 
 h, w = image.shape[:2] 
+print(image.shape)
+
 # Displaying the height and width 
 print("Height = {},  Width = {}".format(h, w)) 
+
+#image size and data type
+print("{} {}".format(image.size,image.dtype))
 
 #resizing the image while maintaing aspect ratio 
 # Calculating the ratio 
@@ -40,6 +45,10 @@ dim = (800, int(h * ratio))
 # Resizing the image 
 resize_aspect = cv2.resize(image, dim) 
 
-# by slicing the pixels of the image 
+# slicing the pixels of the image for Region of Image
 roi = image[100 : 500, 200 : 700] 
 imagepr(roi)
+#%%Splitting and Merging Image Channels "BGR"
+b,g,r = cv2.split(image)
+img = cv2.merge((b,g,r))
+

@@ -20,7 +20,7 @@ def imagepr(img):
       
     # wait for 's' key to save and exit 
     elif k == ord('s'):  
-        cv2.imwrite('copy.png',image) 
+        cv2.imwrite('copy.png',img) 
         cv2.destroyAllWindows() 
 #%% Reading the image using imread() function 
 image = cv2.imread('road.jpg') #1(default) for normal image, 0 for grayscale, -1 for unchanged
@@ -52,3 +52,6 @@ imagepr(roi)
 b,g,r = cv2.split(image)
 img = cv2.merge((b,g,r))
 
+#%% changing colour-space
+img_gray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #for hsv cv2.COLOR_BGR2HSV
+imagepr(img_gray)

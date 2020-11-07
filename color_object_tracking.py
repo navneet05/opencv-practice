@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 #%% function for lower and upper value of color
 def lowup():
-   color = np.uint8([[[9,9,234 ]]])
+   color = np.uint8([[[191,0,0 ]]])
    hsv_value = cv2.cvtColor(color,cv2.COLOR_BGR2HSV)
    a,b,c=cv2.split(hsv_value)
    del b,c

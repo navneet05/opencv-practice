@@ -23,7 +23,7 @@ def imagepr(img):
         cv2.imwrite('copy.png',img) 
         cv2.destroyAllWindows() 
 #%% Reading the image using imread() function 
-image = cv2.imread('road.jpg',) #1(default) for normal image, 0 for grayscale, -1 for unchanged
+image = cv2.imread('road.jpg') #1(default) for normal image, 0 for grayscale, -1 for unchanged
 imagepr(image)
 #%% image shape,size,datatype,resize,slicing
 

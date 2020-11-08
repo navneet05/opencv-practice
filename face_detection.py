@@ -17,11 +17,10 @@ for (x,y,w,h) in faces:
 cv2.imshow('img',img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-#%%
+#%% face detect in VideoCapture
 cap = cv2.VideoCapture(0)
 cap.set(3,640)
 cap.set(4,480)
-#%% face detect in video
 while(cap.isOpened()):
     ret, frame = cap.read()
     if ret==True:
